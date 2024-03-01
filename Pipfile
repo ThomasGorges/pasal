@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+rdkit = "==2022.09.5"
+map4 = {ref = "v1.0", git = "git+https://github.com/reymond-group/map4"}
+tmap-viz = "*"
+tensorflow = "==2.10.0"
+optuna = "*"
+matplotlib = "*"
+xgboost = "==1.7.6"
+numpy = "==1.23.1"
+scikit-learn = "==1.3.0"
+padelpy = "*"
+mordred = "*"
+tensorflow-addons = "*"
+networkx = "==2.1"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

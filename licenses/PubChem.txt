@@ -1,0 +1,7 @@
+According to https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines:
+
+PubChem database:
+Kim, S., Chen, J., Cheng, T., Gindulyte, A., He, J., He, S., Li, Q., Shoemaker, B. A., Thiessen, P. A., Yu, B., Zaslavsky, L., Zhang, J., & Bolton, E. E. (2023). PubChem 2023 update. Nucleic Acids Res., 51(D1), D1373–D1380. https://doi.org/10.1093/nar/gkac956
+
+PubChem PUG-REST:
+Kim, S., Thiessen, P. A., Cheng, T., Yu, B., & Bolton, E. E. (2018). An update on PUG-REST: RESTful interface for programmatic access to PubChem. Nucleic acids research, 46(W1), W563–W570. https://doi.org/10.1093/nar/gky294
