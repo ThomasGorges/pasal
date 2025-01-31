@@ -44,7 +44,7 @@ for dataset in datasets:
     models[dataset].fit(X, y)
     feature_importance[dataset] = np.array(models[dataset].feature_importances_)
 
-dump(models, '../output/analysis/feature_importance_models.joblib')
+dump(models, '../output/analysis/feature_importance_models.joblib', compress=9)
 dump(feature_importance, '../output/analysis/feature_importances.joblib')
 
 importance_df = pd.DataFrame.from_records(feature_importance)
