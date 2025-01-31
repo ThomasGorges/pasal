@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8afd35e82b69cc756cca2b938aedbee9c75cd770204942357d8b8c23d331a067
-size 463
+{
+    "Alpha": 1.5,
+    "Batchsize": 32,
+    "Beta": 0.9,
+    "D_H": 192,
+    "D_Shared_first": 720,
+    "D_Shared_intermediate": 528,
+    "D_Shared_last": 304,
+    "Epochs": 30,
+    "L2_factor": 0.0001,
+    "LearningRate": 0.00072,
+    "N_H": 1,
+    "N_Shared": 1,
+    "P_Dropout_head": 0.15,
+    "P_Dropout_shared": 0.2,
+    "START_TIME": "2023-08-16T08:25:12.298784",
+    "Seed": 1999381026,
+    "WeightDecay": 1e-06,
+    "objective_value": 0.022799826616172
+}

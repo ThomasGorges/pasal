@@ -1,3 +1,79 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dbef49fb20fefdb52819108ffe8077140589aaf2cdc4021bae0483e58fc11616
-size 1538
+{
+    "Alpha": {
+        "type": "categorical",
+        "choices": [1.5]
+    },
+    "Beta": {
+        "type": "categorical",
+        "choices": [0.8]
+    },
+    "Epochs": {
+        "type": "categorical",
+        "choices": [25, 30]
+    },
+    "LearningRate": {
+        "type": "float",
+        "low":  0.00066,
+        "high": 0.00074,
+        "step": 0.00001
+    },
+    "P_Dropout_shared": {
+        "type": "categorical",
+        "choices": [0.2]
+    },
+    "P_Dropout_head": {
+        "type": "categorical",
+        "choices": [0.15]
+    },
+    "L2_factor": {
+        "type": "categorical",
+        "choices": [0.0001]
+    },
+    "N_H": {
+        "type": "categorical",
+        "choices": [1]
+    },
+    "D_Shared_first": {
+        "type": "int",
+        "low": 704,
+        "high": 752,
+        "step": 16
+    },
+    "D_Shared_intermediate": {
+        "type": "int",
+        "low": 480,
+        "high": 528,
+        "step": 16
+    },
+    "D_Shared_last": {
+        "type": "int",
+        "low": 288,
+        "high": 320,
+        "step": 16
+    },
+    "D_H": {
+        "type": "int",
+        "low": 176,
+        "high": 224,
+        "step": 16
+    },
+    "N_Shared": {
+        "type": "categorical",
+        "choices": [1]
+    },
+    "WeightDecay": {
+        "type": "categorical",
+        "choices": [0.000001]
+    },
+    "Batchsize": {
+        "type": "categorical",
+        "choices": [32]
+    },
+    "Seed": {
+        "type": "int",
+        "optimize": true,
+        "low": 0,
+        "high": 4294967295,
+        "step": 1
+    }
+}

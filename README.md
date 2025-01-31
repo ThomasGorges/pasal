@@ -14,6 +14,12 @@ To create the container:
 docker run -it -v ./paper:/home/pasal/paper:Z pasal
 ```
 
+Some files are compressed and need to be decompressed. This can be achieved, for example, with:
+```
+find . -type f -name '*.tar.xz' -execdir tar -xJf {} \;
+find . -type f -name '*.xz' -print0 | xargs -0 xz -d
+```
+
 ## Preprocessing
 Preprocessing is split into multiple parts:
 
