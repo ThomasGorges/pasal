@@ -187,11 +187,11 @@ leff_odor_list_good = ['sulfurous', 'nutty', 'spicy', 'ethereal', 'caramellic']
 ifra_odor_list = ['fruity', 'pear', 'apple', 'pineapple']
 shared_odor_list = ['woody', 'spicy', 'apple']
 
-plot("../output/analysis/shared_model.csv", "../output/plots/fig8a.pdf", shared_odor_list, 'Separation of classes in shared model', xoffset=0.11)
-plot("../output/analysis/leffingwell.csv", "../output/plots/fig8b.pdf", shared_odor_list, 'Separation of classes in Leffingwell head', xoffset=0.11)
-plot("../output/analysis/ifra.csv", "../output/plots/fig8c.pdf", shared_odor_list, 'Separation of classes in IFRA head', xoffset=0.11)
+plot("../output/analysis/shared_model.csv", "../output/plots/fig10a.pdf", shared_odor_list, 'Separation of classes in shared model', xoffset=0.11)
+plot("../output/analysis/leffingwell.csv", "../output/plots/fig10b.pdf", shared_odor_list, 'Separation of classes in Leffingwell head', xoffset=0.11)
+plot("../output/analysis/ifra.csv", "../output/plots/fig10c.pdf", shared_odor_list, 'Separation of classes in IFRA head', xoffset=0.11)
 
-plot("../output/analysis/leffingwell.csv", "../output/plots/fig9a.pdf", leff_odor_list_good, 'Clusters in Leffingwell head', xoffset=0.015)
-plot("../output/analysis/ifra.csv", "../output/plots/fig9b.pdf", ifra_odor_list, 'Fruity cluster composition in IFRA head', xoffset=0.075)
-plot("../output/analysis/leffingwell.csv", "../output/plots/fig9c.pdf", leff_odor_list_bad, 'Overlapping clusters in Leffingwell head', xoffset=0.11)
+plot("../output/analysis/leffingwell.csv", "../output/plots/fig11a.pdf", leff_odor_list_good, 'Clusters in Leffingwell head', xoffset=0.015)
+plot("../output/analysis/ifra.csv", "../output/plots/fig11b.pdf", ifra_odor_list, 'Fruity cluster composition in IFRA head', xoffset=0.075)
+plot("../output/analysis/leffingwell.csv", "../output/plots/fig11c.pdf", leff_odor_list_bad, 'Overlapping clusters in Leffingwell head', xoffset=0.11)
 

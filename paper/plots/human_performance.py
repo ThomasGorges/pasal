@@ -182,4 +182,4 @@ for name, file_suffix, cols in [
 
     fig.tight_layout()
 
-    plt.savefig(f'../output/plots/fig11{file_suffix}.pdf')
+    plt.savefig(f'../output/plots/fig13{file_suffix}.pdf')

@@ -100,4 +100,4 @@ ax.legend([train_scatter, val_scatter, test_scatter], ['Training', 'Validation',
 plt.axis('off')
 plt.tight_layout()
 
-plt.savefig('../output/plots/fig5.pdf')
+plt.savefig('../output/plots/fig6.pdf')
