@@ -13,14 +13,10 @@ docker build . -t pasal
 
 To create the container:
 ```
-docker run -it -v ./paper:/home/pasal/paper:Z pasal
+docker run --gpus all -it -v ./paper:/home/pasal/paper:Z pasal
 ```
 
-Some files are compressed and need to be decompressed. This can be achieved, for example, with:
-```
-find . -type f -name '*.tar.xz' -execdir tar -xJf {} \;
-find . -type f -name '*.xz' -print0 | xargs -0 xz -d
-```
+GPU acceleration is not necessary, but speeds up the calculation of embeddings.
 
 ## Preprocessing
 Preprocessing is split into multiple parts:
