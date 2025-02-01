@@ -18,6 +18,9 @@ padelpy = "*"
 mordred = "*"
 tensorflow-addons = "*"
 networkx = "==2.1"
+upsetplot = "*"
+torch = "*"
+transformers = "*"
 
 [dev-packages]
 

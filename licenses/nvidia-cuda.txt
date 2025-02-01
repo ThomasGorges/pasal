@@ -1,0 +1,1 @@
+See https://docs.nvidia.com/cuda/eula/index.html and https://docs.nvidia.com/cuda/cublasdx/license.html.
