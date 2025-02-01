@@ -62,7 +62,7 @@ def _read_masks(db_identifiers):
     ]
 
 class UniversalScent(tf.keras.Model):
-    def __init__(self, summary_path, params, steps_per_epoch, loss_history_path, blacklisted_dbs=None):
+    def __init__(self, summary_path, params, steps_per_epoch, blacklisted_dbs=None):
         super(UniversalScent, self).__init__()
 
         self.params = params
