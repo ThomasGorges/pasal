@@ -6,7 +6,7 @@ import tensorflow as tf
 
 
 class Dataset:
-    def __init__(self, db_type='train', fold_id=-1, appendix_path=None, exclude_list=None):
+    def __init__(self, db_type='train', fold_id=-1, appendix_path=None, exclude_list=None, use_embeddings=False):
         self.appendix_path = appendix_path
         self.db_blacklist = []
 
@@ -28,6 +28,7 @@ class Dataset:
         self.steps_per_epoch = None
         self.batch_size = None
         self.fold_id = int(fold_id)
+        self.use_embeddings = use_embeddings
 
 
     def load(self, batch_size, shuffle=False):
@@ -49,7 +50,11 @@ class Dataset:
         else:
             self.fold_cids = None
 
-        self.features_df = pd.read_csv('../output/preprocessing/reduced_features.csv').set_index('CID')
+        if self.use_embeddings:
+            features_path = '../output/preprocessing/molformer_features.csv'
+        else:
+            features_path = '../output/preprocessing/reduced_features.csv'
+        self.features_df = pd.read_csv(features_path).set_index('CID')
 
         labels = dataset.drop(columns=['IsomericSMILES'])
         self.dataset = labels

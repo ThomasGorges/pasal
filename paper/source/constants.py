@@ -16,6 +16,10 @@ SEED = int.from_bytes(os.urandom(4), sys.byteorder, signed=False)
 
 NUM_FOLDS = 10
 NUM_FEATURES = 1286
+for arg in sys.argv:
+    if arg == "--use_embeddings":
+        NUM_FEATURES = 768
+        break
 
 DREAM_ODORS = ['INTENSITY/STRENGTH', 'VALENCE/PLEASANTNESS', 'BAKERY', 'SWEET', 'FRUIT', 'FISH', 'GARLIC', 'SPICES',
                'COLD', 'SOUR', 'BURNT', 'ACID', 'WARM', 'MUSKY', 'SWEATY', 'AMMONIA/URINOUS', 'DECAYED', 'WOOD',

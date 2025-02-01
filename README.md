@@ -62,6 +62,8 @@ Ablation study:
 ```
 cd paper/source/
 ./run_ablation_study.sh
+python3 analyze_ablation_study.py descriptors
+python3 analyze_ablation_study.py embeddings
 ```
 
 Hyperparameter search (single):

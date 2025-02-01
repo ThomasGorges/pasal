@@ -3,8 +3,16 @@ import numpy as np
 from joblib import load
 import constants
 from utility.score import calculate_scores_from_submission_in_memory
+import sys
 
 NUM_DATASETS = 5
+
+if sys.argv[1] == 'descriptors':
+    NAME_SUFFIX = ''
+elif sys.argv[1] == 'embeddings':
+    NAME_SUFFIX = 'embeddings_'
+else:
+    raise Exception("Invalid arguments")
 
 DREAM_SCALER = load("../output/preprocessing/dream_scaler.joblib")
 LBS2_CID_ORDER, LBS2_GROUND_TRUTH = constants.read_DREAM_submission('../data/dream/LBs2.txt')
@@ -22,7 +30,7 @@ def _unscale_dream(predictions):
 
 
 for i in range(NUM_DATASETS):
-    df = pd.read_json(f"../output/study_results/ablation_{i + 1}_dataset_seed_0_999.json", orient="index")
+    df = pd.read_json(f"../output/study_results/ablation_{i + 1}_dataset_{NAME_SUFFIX}seed_0_999.json", orient="index")
 
     z_scores = []
     mse_losses = []

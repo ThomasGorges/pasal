@@ -65,7 +65,7 @@ def objective(fold_id, params: dict, summary_path: str, silent=True, exclude_lis
     return run_results
 
 
-def train_with_config(summary_path, params, is_silent, fold_id, exclude_list=[], alpha=None, beta=None):
+def train_with_config(summary_path, params, is_silent, fold_id, exclude_list=[], alpha=None, beta=None, use_embeddings=False):
     batch_size = int(params['Batchsize'])
 
     logging.info('Config: ' + str(params))
@@ -75,9 +75,9 @@ def train_with_config(summary_path, params, is_silent, fold_id, exclude_list=[],
     
     
     datasets = {
-        'train': Dataset(db_type='train', fold_id=fold_id, exclude_list=exclude_list),
-        'val': Dataset(db_type='val', fold_id=fold_id),
-        'test': Dataset(db_type='test'),
+        'train': Dataset(db_type='train', fold_id=fold_id, exclude_list=exclude_list, use_embeddings=use_embeddings),
+        'val': Dataset(db_type='val', fold_id=fold_id, use_embeddings=use_embeddings),
+        'test': Dataset(db_type='test', use_embeddings=use_embeddings),
     }
 
     datasets['train'].load(batch_size, shuffle=True)
@@ -175,6 +175,7 @@ if __name__ == '__main__':
     parser.add_argument("--exclude", dest="exclude_list")
     parser.add_argument('--alpha', dest='alpha')
     parser.add_argument('--beta', dest='beta')
+    parser.add_argument('--use_embeddings', dest='use_embeddings', action='store_true')
 
     args = parser.parse_args()
 
@@ -264,7 +265,7 @@ if __name__ == '__main__':
 
         logging.info(f'Training with params ({params}). Output will be written to {output_path}.')
 
-        train_with_config(output_path, params, args.silent, args.fold_id, exclude_list=args.exclude_list, alpha=args.alpha, beta=args.beta)
+        train_with_config(output_path, params, args.silent, args.fold_id, exclude_list=args.exclude_list, alpha=args.alpha, beta=args.beta, use_embeddings=args.use_embeddings)
     else:
         if args.random_search_seed:
             seed = int(args.random_search_seed)
