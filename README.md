@@ -1,7 +1,21 @@
 # PASAL
-This repository contains the implementation of the paper "PASAL: Progress- and sparsity-aware loss balancing for heterogeneous dataset fusion" from Gorges et al.
+This repository contains the implementation of the paper ["PASAL: Progress- and sparsity-aware loss balancing for heterogeneous dataset fusion"](https://www.sciencedirect.com/science/article/pii/S1566253525001113) from Gorges et al. published in Information Fusion.
 
 This is a fork of the initial implementation hosted on the [Fraunhofer GitLab](https://gitlab.cc-asp.fraunhofer.de/pasal/pasal). This fork includes changes required for the revision of the article. The last commit from Fraunhofer was commit 6308136f with the message "Replace files with their compressed versions". Subsequent commits were made by the Friedrich-Alexander-Universität Erlangen-Nürnberg.
+
+### Citation
+If you use PASAL in your research, please cite it as follows:
+```
+@article{gorges2025pasal,
+  title={PASAL: Progress-and sparsity-aware loss balancing for heterogeneous dataset fusion},
+  author={Gorges, Thomas and Scholz, Teresa and Saloman, Stefan and Zinnen, Mathias and Hoffmann, Juliane and Gourmelon, Nora and Maier, Andreas and Hettenkofer, Sebastian and Christlein, Vincent},
+  journal={Information Fusion},
+  pages={103038},
+  year={2025},
+  publisher={Elsevier},
+  doi={10.1016/j.inffus.2025.103038}
+}
+```
 
 ### Getting started
 A Dockerfile is provided to ease with the setup of the environment.
