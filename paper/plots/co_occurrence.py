@@ -32,9 +32,10 @@ for db_name in db_classes.keys():
 
             z_values[db_name][x_index][y_index] += 1
 
-fig, axs = plt.subplots(1, 4, figsize=(12, 6))
+fig, axs = plt.subplots(2, 2, figsize=(6, 6))
 
 x = 0
+y = 0
 
 for db_name in z_values.keys():
     name_to_display = ''
@@ -49,16 +50,19 @@ for db_name in z_values.keys():
     elif db_name == 'all':
         name_to_display = 'Categorical datasets combined'
 
-    im = axs[x].imshow(z_values[db_name])
+    im = axs[x][y].imshow(z_values[db_name], cmap='gray')
 
-    axs[x].set_xticks([])
-    axs[x].set_yticks([])
-    axs[x].set_title(name_to_display)
+    axs[x][y].set_xticks([])
+    axs[x][y].set_yticks([])
+    axs[x][y].set_title(name_to_display)
 
     x += 1
+    if x == 2:
+        x = 0
+        y += 1
 
-patches = [mpatches.Patch(color=im.cmap(im.norm(0)), label='exists'), mpatches.Patch(color=im.cmap(im.norm(1)), label='does not exist'),]
-legend = fig.legend(handles=patches, title='Pair combination', loc='lower center', bbox_to_anchor=(0.5, 0.125), fancybox=False, shadow=True, ncols=2)
+patches = [mpatches.Rectangle((0, 0), 1, 1, facecolor=im.cmap(im.norm(0)), edgecolor='black', label='exists'), mpatches.Rectangle((0, 0), 1, 1, facecolor=im.cmap(im.norm(1)), edgecolor='black', label='does not exist'),]
+legend = fig.legend(handles=patches, title='Pair combination', loc='lower center', bbox_to_anchor=(0.5, -0.125), handleheight=1, handlelength=1, fancybox=False, shadow=True, ncols=2)
 
 fig.tight_layout()
 plt.savefig('../output/plots/fig4.pdf', dpi=1200, bbox_extra_artists=(legend,), bbox_inches='tight')

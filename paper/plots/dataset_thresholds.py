@@ -93,7 +93,7 @@ print(f'Lost {lost_ratio_at_20 * 100.0:.2f}% ({y_dropped[20]}) classes at thresh
 total_num_classes = y_remaining[0] + y_dropped[0]
 print(f'Total num classes: {total_num_classes}')
 
-fig, ax = plt.subplots(1, 2, figsize=(12, 3.5), squeeze=False)
+fig, ax = plt.subplots(2, 1, figsize=(8, 7), squeeze=False)
 
 db_counter = 0
 
@@ -129,18 +129,18 @@ for db_name in sorted_names:
         labels[0] = 'dropped classes'
         labels[1] = 'remaining classes'
     
-    ax[db_counter][0].step(dropped_x, dropped_y, label=labels[0])
-    ax[db_counter][0].step(remaining_x, remaining_y, label=labels[1])
+    ax[0][db_counter].step(dropped_x, dropped_y, label=labels[0])
+    ax[0][db_counter].step(remaining_x, remaining_y, label=labels[1])
 
     dropped_y_diff = np.diff(dropped_y)
-    ax[db_counter][1].step(dropped_x[1:], dropped_y_diff, label=labels[2])
+    ax[1][db_counter].step(dropped_x[1:], dropped_y_diff, label=labels[2])
     remaining_y_diff = np.diff(remaining_y)
-    ax[db_counter][1].step(remaining_x[1:], remaining_y_diff, label=labels[3])
+    ax[1][db_counter].step(remaining_x[1:], remaining_y_diff, label=labels[3])
     
-    ax[db_counter][0].set_title(name_to_display)
-    ax[db_counter][1].set_title(name_to_display + ' (first order difference)')
-    ax[db_counter][0].set_xlabel('Class sample size threshold')
-    ax[db_counter][1].set_xlabel('Class sample size threshold')
+    ax[0][db_counter].set_title(name_to_display)
+    ax[1][db_counter].set_title(name_to_display + ' (first order difference)')
+    ax[0][db_counter].set_xlabel('Class sample size threshold')
+    ax[1][db_counter].set_xlabel('Class sample size threshold')
 
     db_counter += 1
 
